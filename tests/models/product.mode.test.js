@@ -96,7 +96,7 @@ describe("Product static", () => {
 			expect(product).toBe("missing productId")
 		})
 		it("failed => invalid productId", async () => {
-			const product = await Product.getProductById('3')
+			const product = await Product.getProductById("3")
 			expect(product).toBeNull()
 		})
 	})
@@ -109,16 +109,16 @@ describe("Product static", () => {
 			expect(emptyProduct.length).toBe(2)
 		})
 		it("Filter by name", async () => {
-			const emptyProduct = await Product.getListOfProduct({name:'hub'})
+			const emptyProduct = await Product.getListOfProduct({ name: "hub" })
 			expect(emptyProduct.length).toBe(1)
 		})
 		it("Filter by price", async () => {
-			const emptyProduct = await Product.getListOfProduct({price:[0,1000]})
+			const emptyProduct = await Product.getListOfProduct({ price: [0, 1000] })
 			expect(emptyProduct.length).toBe(1)
 		})
 		it("missing bound in price", async () => {
-			const emptyProduct = await Product.getListOfProduct({price:[0]})
-			expect(emptyProduct).toBe('missing boundary on price')
+			const emptyProduct = await Product.getListOfProduct({ price: [0] })
+			expect(emptyProduct).toBe("missing boundary on price")
 		})
 	})
 })
