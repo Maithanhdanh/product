@@ -1,0 +1,1 @@
+docker build -t product:latest -f Dockerfile .
