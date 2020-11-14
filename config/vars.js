@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== "production") {
 module.exports = {
 	NODE_ENV: process.env.NODE_ENV,
 	PORT: process.env.PORT,
+	CUSTOMER_URL: process.env.CUSTOMER_URL,
 	DEFAULT_PAGINATION_PERPAGE: process.env.DEFAULT_PAGINATION_PERPAGE,
 	MONGODB_URL: process.env.MONGODB_URL,
 }

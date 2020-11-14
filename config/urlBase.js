@@ -1,0 +1,17 @@
+const URL_BASE = {
+	CUSTOMER: "/customer",
+}
+
+const ROUTES_CUSTOMER = {
+	ADD_SEARCH: "/add_search",
+	ADD_VIEW: "/add_view",
+}
+
+const ROUTE_MAP = {
+	CUSTOMER: {
+		ADD_SEARCH: { PATH: URL_BASE.CUSTOMER + ROUTES_CUSTOMER.ADD_SEARCH, METHOD: "POST" },
+		ADD_VIEW: { PATH: URL_BASE.CUSTOMER + ROUTES_CUSTOMER.ADD_VIEW, METHOD: "POST" },
+	}
+}
+
+module.exports = ROUTE_MAP
