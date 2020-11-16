@@ -2,6 +2,7 @@ const { Product } = require("../../models/product.model")
 const server = require("../../index")
 const request = require("supertest")
 const mongoose = require("mongoose")
+const { register, unregister } = require("../../helpers/registry")
 
 const sampleProduct = {
 	productId: "6",
@@ -12,13 +13,19 @@ const sampleProduct = {
 }
 const uid = 1
 
+const ip = "3.1.218.20",
+	port = 5000,
+	service = "customer"
+
 beforeAll(async () => {
 	jest.useFakeTimers()
 	await Product.checkToCreateProduct(sampleProduct.productId, sampleProduct)
+	await register(ip, port, service)
 })
 
 afterAll(async () => {
 	await Product.deleteMany({})
+	await unregister(ip, port, service)
 	server.close()
 })
 
@@ -160,7 +167,6 @@ describe("Product", () => {
 					.expect(500)
 
 				expect(res.body.error).toBe(true)
-				expect(res.body.response).toBe('invalid uid')
 			})
 		})
 	})

@@ -3,6 +3,7 @@ const ENV_VAR = require("./vars")
 
 // <!-- Initial axios request to AUTHENTICATION server -->
 const axiosCustomer = axios.create({
+	baseURL: ENV_VAR.REGISTRY_URL,
 	headers: {
 		"Content-Type": "application/json",
 		"Access-Control-Allow-Origin": "*",

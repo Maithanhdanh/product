@@ -5,6 +5,6 @@ services:
     container_name: product
     restart: unless-stopped
     env_file:
-      - .env
+      - docker.env
     ports:
       - "6000:5000"
